@@ -14,15 +14,16 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
+            <Button Grid.Row="0" Grid.Column="3" Click="BtnSortClick" x:Name="BtnSort">Sort</Button>
             <Label>Authors:</Label>
-            <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
+            <DataGrid AutoGenerateColumns="False"
                   x:Name="LstAuthors"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   ItemsSource="{Binding Students, Mode=OneWay}"
                   SelectionMode="Single"
                   CanUserAddRows="False"
                   IsReadOnly="True"
-                  SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
+                  SelectedItem="{Binding SelectedStudent, Mode=TwoWay}" SelectionChanged="LstAuthors_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Width="100" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="Vārds" Width="150" Binding="{Binding Name}" />
@@ -35,6 +36,7 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </DataGrid>
+
             <Label>Books:</Label>
             <DataGrid AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
                 x:Name="LstBooks"
@@ -52,4 +54,3 @@
         </StackPanel>
     </Grid>
 </Window>
-    

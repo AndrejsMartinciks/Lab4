@@ -28,5 +28,10 @@ namespace Lab3.WpfApplication
             _viewModel.Load();
             this.DataContext = _viewModel;
         }
+
+        private void LstAuthors_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
